@@ -1,0 +1,105 @@
+/* إعداد الخطوط والألوان */
+body {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    background: linear-gradient(to right, #ffa600, #edde6d);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* جعل الصفحة تملأ الشاشة بالكامل */
+}
+
+.container {
+    width: 80%;
+    height: 90vh; /* تحديد ارتفاع بحيث يملأ الصفحة */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    color: #ffc800;
+    margin-bottom: 20px;
+}
+
+/* تحسين تخطيط الجدول */
+.table-container {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto; /* إضافة تمرير في حالة وجود بيانات كثيرة */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #ffa600;
+    color: white;
+    font-weight: bold;
+}
+
+/* تحسين عرض البريد الإلكتروني */
+td a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+td a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* تأثير عند النسخ */
+.copied {
+    color: green !important;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* تحسين التناسق للهواتف المحمولة */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .table-container {
+        overflow-x: auto; /* تمكين التمرير الأفقي إذا كان الجدول كبيرًا */
+    }
+}
+
+/* أنيميشن تحميل البيانات */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
